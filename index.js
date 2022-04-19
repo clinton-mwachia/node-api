@@ -7,6 +7,7 @@ require("dotenv").config();
 
 /** IMPORT THE ROUTES */
 const userRouter = require("./routes/user");
+const todoRouter = require("./routes/todo");
 
 /** INITIALIZE THE APP */
 const app = express();
@@ -20,6 +21,7 @@ app.use(morgan("dev"));
 
 /**ROUTES */
 app.use(`${process.env.API_URL}/user`, userRouter);
+app.use(`${process.env.API_URL}/todo`, todoRouter);
 
 /** CONNECTING TO THE DATABSE */
 mongoose
