@@ -5,6 +5,9 @@ const helmet = require("helmet");
 const cors = require("cors");
 require("dotenv").config();
 
+/** IMPORT THE ROUTES */
+const userRouter = require("./routes/user");
+
 /** INITIALIZE THE APP */
 const app = express();
 
@@ -14,6 +17,9 @@ app.use(cors());
 app.options("*", cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+/**ROUTES */
+app.use(`${process.env.API_URL}/user`, userRouter);
 
 /** CONNECTING TO THE DATABSE */
 mongoose
