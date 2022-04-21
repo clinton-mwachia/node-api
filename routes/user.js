@@ -1,6 +1,6 @@
 /**
  * users routes
- * http://localhost:4000/api/v1/user
+ * http://localhost:4050/api/v1/user
  */
 
 const express = require("express");
@@ -66,7 +66,7 @@ router.get(`/:id`, async (req, res) => {
 
 /**
  * get a user by role
- * http://localhost:4000/api/v1/user/get/role?access=admin
+ * http://localhost:4050/api/v1/user/get/role?access=admin
  */
 router.get(`/get/role`, async (req, res) => {
   try {
@@ -133,7 +133,7 @@ router.get(`/get/count`, async (req, res) => {
 
 /**
  * count users by role
- * http://localhost:4040/api/v1/user/get/count/role?role=admin
+ * http://localhost:4050/api/v1/user/get/count/role?role=admin
  */
 router.get(`/get/count/role`, async (req, res) => {
   const usercount = await User.find({
