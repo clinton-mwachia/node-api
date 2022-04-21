@@ -12,16 +12,21 @@ const todoRouter = require("./routes/todo");
 /** ERROR HANDLER */
 const NotFound = require("./helpers/404");
 const errorHandler = require("./helpers/error-handler");
+const authJwt = require("./helpers/authJwt");
 
 /** INITIALIZE THE APP */
 const app = express();
 
+var corsOptions = {
+  origin: "http://localhost:3000",
+};
+
 /** MIDDLEWARES */
 app.use(helmet());
-app.use(cors());
-app.options("*", cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(authJwt());
 app.use(errorHandler);
 
 /**ROUTES */
