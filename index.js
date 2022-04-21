@@ -26,7 +26,7 @@ app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(authJwt());
+//app.use(authJwt());
 app.use(errorHandler);
 
 /**ROUTES */
