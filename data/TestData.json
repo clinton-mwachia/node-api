@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "firstname": "jerry",
+      "lastname": "tom",
+      "username": "jtomy",
+      "email": "jtomy@gmail.com",
+      "password": "jtom345",
+      "role": "admin",
+      "organisation": "jtom technologies"
+    },
+    {
+      "firstname": "jimmy",
+      "lastname": "hooks",
+      "username": "jhooks",
+      "email": "jhook@yahoo.com",
+      "password": "jhuk345",
+      "role": "user",
+      "organisation": "jtom technologies"
+    },
+    {
+      "firstname": "prettier",
+      "lastname": "tom",
+      "username": "prettomy",
+      "email": "pretomy@gmail.com",
+      "password": "ptom345",
+      "role": "admin",
+      "organisation": "individual"
+    }
+  ]
+}
