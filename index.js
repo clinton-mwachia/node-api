@@ -9,6 +9,10 @@ require("dotenv").config();
 const userRouter = require("./routes/user");
 const todoRouter = require("./routes/todo");
 
+/** ERROR HANDLER */
+const NotFound = require("./helpers/404");
+const errorHandler = require("./helpers/error-handler");
+
 /** INITIALIZE THE APP */
 const app = express();
 
@@ -18,6 +22,7 @@ app.use(cors());
 app.options("*", cors());
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(errorHandler);
 
 /**ROUTES */
 app.use(`${process.env.API_URL}/user`, userRouter);
@@ -32,6 +37,7 @@ mongoose
   .then(() => console.log("DB connected successfully"))
   .catch((err) => console.log("could not connect to database"));
 
+app.use(NotFound);
 app.listen(process.env.PORT, () => {
   console.log(`Server running on: http://localhost:${process.env.PORT}/api/v1`);
 });
